@@ -1,0 +1,51 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body> 
+    <table>
+        <tr>
+            <td colspan="3"><label>0</label></td>
+        </tr>
+        <tr>
+            <td><button>1</button></td>
+            <td><button>2</button></td>
+            <td><button>3</button></td>
+            <td><button>+</button></td>
+        </tr>
+        <tr>
+            <td><button>4</button></td>
+            <td><button>5</button></td>
+            <td><button>6</button></td>
+            <td><button>-</button></td>
+        </tr>
+        <tr>
+            <td><button>7</button></td>
+            <td><button>8</button></td>
+            <td><button>9</button></td>
+            <td><button>*</button></td>
+        </tr>
+        <tr>
+            <td><button>.</button></td>
+            <td><button>0</button></td>
+            <td><button>=</button></td>
+            <td><button>/</button></td>
+        </tr>
+    </table>
+</body>
+<footer>
+    <script>
+        $(document).on("click","button",function(){
+            //Faz a conta
+            if( $(this).text() == "=" ){
+                var result = eval( $("label").text() );
+                $("label").text(result);
+            }else{
+            //Dados na tela
+                if( $("label").text() == 0 )
+                    $("label").text( $(this).text() );
+                else
+                    $("label").append($(this).text());
+            }
+        });
+    </script>
+</footer>
